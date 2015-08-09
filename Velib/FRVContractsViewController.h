@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Realm/Realm.h>
 
 @interface FRVContractsViewController : UITableViewController
+
+@property (strong, nonatomic) RLMResults* contracts;
 
 @end
