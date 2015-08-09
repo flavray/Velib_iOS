@@ -14,4 +14,15 @@
 
 @implementation FRVContractsViewController
 
+- (instancetype)init
+{
+    self = [super initWithStyle:UITableViewStylePlain];
+
+    if (self) {
+        [self.navigationItem setTitle:@"Contracts"];
+    }
+
+    return self;
+}
+
 @end

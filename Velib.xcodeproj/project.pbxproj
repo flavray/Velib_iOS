@@ -14,6 +14,8 @@
 		FF0B4D821B77663D00437F55 /* VelibTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FF0B4D811B77663D00437F55 /* VelibTests.m */; };
 		FF0B4D8D1B7766CF00437F55 /* FRVContractsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF0B4D8C1B7766CF00437F55 /* FRVContractsViewController.m */; };
 		FF0B4D8F1B7767F400437F55 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF0B4D8E1B7767F400437F55 /* Default-568h@2x.png */; };
+		FF0B4D911B7769AC00437F55 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF0B4D901B7769AC00437F55 /* Realm.framework */; };
+		FF0B4D931B7769D300437F55 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FF0B4D921B7769D300437F55 /* libc++.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +43,8 @@
 		FF0B4D8B1B7766CF00437F55 /* FRVContractsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRVContractsViewController.h; sourceTree = "<group>"; };
 		FF0B4D8C1B7766CF00437F55 /* FRVContractsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRVContractsViewController.m; sourceTree = "<group>"; };
 		FF0B4D8E1B7767F400437F55 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		FF0B4D901B7769AC00437F55 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		FF0B4D921B7769D300437F55 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +52,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF0B4D931B7769D300437F55 /* libc++.dylib in Frameworks */,
+				FF0B4D911B7769AC00437F55 /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +70,7 @@
 		FF0B4D591B77663D00437F55 = {
 			isa = PBXGroup;
 			children = (
+				FF0B4D921B7769D300437F55 /* libc++.dylib */,
 				FF0B4D8E1B7767F400437F55 /* Default-568h@2x.png */,
 				FF0B4D641B77663D00437F55 /* Velib */,
 				FF0B4D7E1B77663D00437F55 /* VelibTests */,
@@ -83,6 +90,7 @@
 		FF0B4D641B77663D00437F55 /* Velib */ = {
 			isa = PBXGroup;
 			children = (
+				FF0B4D901B7769AC00437F55 /* Realm.framework */,
 				FF0B4D691B77663D00437F55 /* AppDelegate.h */,
 				FF0B4D6A1B77663D00437F55 /* AppDelegate.m */,
 				FF0B4D8B1B7766CF00437F55 /* FRVContractsViewController.h */,
@@ -330,6 +338,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Velib",
+				);
 				INFOPLIST_FILE = Velib/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -341,6 +353,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Velib",
+				);
 				INFOPLIST_FILE = Velib/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
