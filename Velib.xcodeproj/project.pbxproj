@@ -10,10 +10,10 @@
 		FF0B4D681B77663D00437F55 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FF0B4D671B77663D00437F55 /* main.m */; };
 		FF0B4D6B1B77663D00437F55 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FF0B4D6A1B77663D00437F55 /* AppDelegate.m */; };
 		FF0B4D6E1B77663D00437F55 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF0B4D6D1B77663D00437F55 /* ViewController.m */; };
-		FF0B4D711B77663D00437F55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF0B4D6F1B77663D00437F55 /* Main.storyboard */; };
 		FF0B4D731B77663D00437F55 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF0B4D721B77663D00437F55 /* Images.xcassets */; };
-		FF0B4D761B77663D00437F55 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF0B4D741B77663D00437F55 /* LaunchScreen.xib */; };
 		FF0B4D821B77663D00437F55 /* VelibTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FF0B4D811B77663D00437F55 /* VelibTests.m */; };
+		FF0B4D8D1B7766CF00437F55 /* FRVContractsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF0B4D8C1B7766CF00437F55 /* FRVContractsViewController.m */; };
+		FF0B4D8F1B7767F400437F55 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF0B4D8E1B7767F400437F55 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,12 +34,13 @@
 		FF0B4D6A1B77663D00437F55 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		FF0B4D6C1B77663D00437F55 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		FF0B4D6D1B77663D00437F55 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		FF0B4D701B77663D00437F55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FF0B4D721B77663D00437F55 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		FF0B4D751B77663D00437F55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		FF0B4D7B1B77663D00437F55 /* VelibTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VelibTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF0B4D801B77663D00437F55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF0B4D811B77663D00437F55 /* VelibTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VelibTests.m; sourceTree = "<group>"; };
+		FF0B4D8B1B7766CF00437F55 /* FRVContractsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRVContractsViewController.h; sourceTree = "<group>"; };
+		FF0B4D8C1B7766CF00437F55 /* FRVContractsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRVContractsViewController.m; sourceTree = "<group>"; };
+		FF0B4D8E1B7767F400437F55 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +64,7 @@
 		FF0B4D591B77663D00437F55 = {
 			isa = PBXGroup;
 			children = (
+				FF0B4D8E1B7767F400437F55 /* Default-568h@2x.png */,
 				FF0B4D641B77663D00437F55 /* Velib */,
 				FF0B4D7E1B77663D00437F55 /* VelibTests */,
 				FF0B4D631B77663D00437F55 /* Products */,
@@ -83,11 +85,11 @@
 			children = (
 				FF0B4D691B77663D00437F55 /* AppDelegate.h */,
 				FF0B4D6A1B77663D00437F55 /* AppDelegate.m */,
+				FF0B4D8B1B7766CF00437F55 /* FRVContractsViewController.h */,
+				FF0B4D8C1B7766CF00437F55 /* FRVContractsViewController.m */,
 				FF0B4D6C1B77663D00437F55 /* ViewController.h */,
 				FF0B4D6D1B77663D00437F55 /* ViewController.m */,
-				FF0B4D6F1B77663D00437F55 /* Main.storyboard */,
 				FF0B4D721B77663D00437F55 /* Images.xcassets */,
-				FF0B4D741B77663D00437F55 /* LaunchScreen.xib */,
 				FF0B4D651B77663D00437F55 /* Supporting Files */,
 			);
 			path = Velib;
@@ -199,9 +201,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF0B4D711B77663D00437F55 /* Main.storyboard in Resources */,
-				FF0B4D761B77663D00437F55 /* LaunchScreen.xib in Resources */,
 				FF0B4D731B77663D00437F55 /* Images.xcassets in Resources */,
+				FF0B4D8F1B7767F400437F55 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,6 +221,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF0B4D6E1B77663D00437F55 /* ViewController.m in Sources */,
+				FF0B4D8D1B7766CF00437F55 /* FRVContractsViewController.m in Sources */,
 				FF0B4D6B1B77663D00437F55 /* AppDelegate.m in Sources */,
 				FF0B4D681B77663D00437F55 /* main.m in Sources */,
 			);
@@ -242,25 +244,6 @@
 			targetProxy = FF0B4D7C1B77663D00437F55 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		FF0B4D6F1B77663D00437F55 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FF0B4D701B77663D00437F55 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		FF0B4D741B77663D00437F55 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FF0B4D751B77663D00437F55 /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		FF0B4D831B77663D00437F55 /* Debug */ = {
@@ -350,6 +333,7 @@
 				INFOPLIST_FILE = Velib/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -360,6 +344,7 @@
 				INFOPLIST_FILE = Velib/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

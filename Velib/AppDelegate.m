@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "FRVContractsViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,17 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+
+    FRVContractsViewController* cvc = [[FRVContractsViewController alloc] init];
+
+    UINavigationController* nvc = [[UINavigationController alloc] initWithRootViewController:cvc];
+
+    self.window.rootViewController = nvc;
+
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+
     return YES;
 }
 
