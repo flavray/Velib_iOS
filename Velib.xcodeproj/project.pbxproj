@@ -26,6 +26,8 @@
 		FFBD3CE51B7BA7C700BE288C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBD3CE41B7BA7C700BE288C /* QuartzCore.framework */; };
 		FFBD3CE71B7BA7D000BE288C /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBD3CE61B7BA7D000BE288C /* libsqlite3.dylib */; };
 		FFBD3CE91B7BA7D500BE288C /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBD3CE81B7BA7D500BE288C /* libz.dylib */; };
+		FFBD3CED1B7BA93300BE288C /* FRVContractViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBD3CEC1B7BA93300BE288C /* FRVContractViewController.m */; };
+		FFBD3CEF1B7BAAC400BE288C /* libMapbox.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBD3CEE1B7BAAC400BE288C /* libMapbox.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,9 @@
 		FFBD3CE41B7BA7C700BE288C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		FFBD3CE61B7BA7D000BE288C /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		FFBD3CE81B7BA7D500BE288C /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		FFBD3CEB1B7BA93300BE288C /* FRVContractViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRVContractViewController.h; sourceTree = "<group>"; };
+		FFBD3CEC1B7BA93300BE288C /* FRVContractViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRVContractViewController.m; sourceTree = "<group>"; };
+		FFBD3CEE1B7BAAC400BE288C /* libMapbox.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMapbox.a; path = Velib/Mapbox/libMapbox.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFBD3CEF1B7BAAC400BE288C /* libMapbox.a in Frameworks */,
 				FFBD3CE91B7BA7D500BE288C /* libz.dylib in Frameworks */,
 				FFBD3CE71B7BA7D000BE288C /* libsqlite3.dylib in Frameworks */,
 				FFBD3CE51B7BA7C700BE288C /* QuartzCore.framework in Frameworks */,
@@ -98,10 +104,7 @@
 		FF0B4D591B77663D00437F55 = {
 			isa = PBXGroup;
 			children = (
-				FFBD3CE81B7BA7D500BE288C /* libz.dylib */,
-				FFBD3CE61B7BA7D000BE288C /* libsqlite3.dylib */,
-				FFBD3CE41B7BA7C700BE288C /* QuartzCore.framework */,
-				FFBD3CE21B7BA7BF00BE288C /* CoreLocation.framework */,
+				FFBD3CEE1B7BAAC400BE288C /* libMapbox.a */,
 				FF0B4D921B7769D300437F55 /* libc++.dylib */,
 				FF0B4D8E1B7767F400437F55 /* Default-568h@2x.png */,
 				FF0B4D641B77663D00437F55 /* Velib */,
@@ -122,11 +125,13 @@
 		FF0B4D641B77663D00437F55 /* Velib */ = {
 			isa = PBXGroup;
 			children = (
-				FF0B4D901B7769AC00437F55 /* Realm.framework */,
+				FFBD3CEA1B7BA8F300BE288C /* Frameworks */,
 				FF0B4D691B77663D00437F55 /* AppDelegate.h */,
 				FF0B4D6A1B77663D00437F55 /* AppDelegate.m */,
 				FF0B4D8B1B7766CF00437F55 /* FRVContractsViewController.h */,
 				FF0B4D8C1B7766CF00437F55 /* FRVContractsViewController.m */,
+				FFBD3CEB1B7BA93300BE288C /* FRVContractViewController.h */,
+				FFBD3CEC1B7BA93300BE288C /* FRVContractViewController.m */,
 				FF0B4D721B77663D00437F55 /* Images.xcassets */,
 				FF0B4D651B77663D00437F55 /* Supporting Files */,
 				FF100F721B776B3C0069B4C1 /* FRVContract.h */,
@@ -169,6 +174,18 @@
 				FF0B4D801B77663D00437F55 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FFBD3CEA1B7BA8F300BE288C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FF0B4D901B7769AC00437F55 /* Realm.framework */,
+				FFBD3CE81B7BA7D500BE288C /* libz.dylib */,
+				FFBD3CE61B7BA7D000BE288C /* libsqlite3.dylib */,
+				FFBD3CE21B7BA7BF00BE288C /* CoreLocation.framework */,
+				FFBD3CE41B7BA7C700BE288C /* QuartzCore.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,6 +294,7 @@
 				FF100F7F1B777F720069B4C1 /* FRVLastUpdate.m in Sources */,
 				FF100F741B776B3C0069B4C1 /* FRVContract.m in Sources */,
 				FF0B4D8D1B7766CF00437F55 /* FRVContractsViewController.m in Sources */,
+				FFBD3CED1B7BA93300BE288C /* FRVContractViewController.m in Sources */,
 				FF0B4D6B1B77663D00437F55 /* AppDelegate.m in Sources */,
 				FF95C0121B7B8FA400678145 /* FRVFetcher.m in Sources */,
 				FF0B4D681B77663D00437F55 /* main.m in Sources */,
@@ -390,8 +408,17 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Velib",
 				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/flavr/Documents/iOS/Velib_iOS/Velib/Mapbox/Headers,
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
 				INFOPLIST_FILE = Velib/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Velib/Mapbox",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -406,8 +433,17 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Velib",
 				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/flavr/Documents/iOS/Velib_iOS/Velib/Mapbox/Headers,
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
 				INFOPLIST_FILE = Velib/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Velib/Mapbox",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";

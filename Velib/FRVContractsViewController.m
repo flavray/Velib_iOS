@@ -10,6 +10,7 @@
 #import "FRVContract.h"
 #import "FRVContractStore.h"
 #import "FRVContractCell.h"
+#import "FRVContractViewController.h"
 
 @interface FRVContractsViewController ()
 
@@ -70,11 +71,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // FRVContract* contract = [[self contracts] objectAtIndex:indexPath.row];
+    FRVContract* contract = [[self contracts] objectAtIndex:indexPath.row];
 
-    // FRVContractViewController* cvc = [[FRVContractViewController alloc] initWithContract:contract];
+    FRVContractViewController* cvc = [[FRVContractViewController alloc] initWithContract:contract];
 
-    // [self.navigationController pushViewController:cvc animated:YES];
+    [self.navigationController pushViewController:cvc animated:YES];
 }
 
 # pragma mark - Refresh
