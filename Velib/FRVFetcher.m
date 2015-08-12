@@ -22,7 +22,7 @@
     return [NSString stringWithFormat:@"%@%@%@", base, url, @".json"];
 }
 
-+ (NSDictionary*)json:(NSString *)url
++ (NSDictionary*)json:(NSString*)url
 {
     NSError* error;
     
@@ -38,6 +38,13 @@
     }
     
     return result;
+}
+
++ (NSDictionary*)jsonWithParts:(NSArray*)parts
+{
+    NSString* url = [parts componentsJoinedByString:@"/"];
+
+    return [self json:url];
 }
 
 @end

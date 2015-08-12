@@ -12,4 +12,6 @@
 
 + (NSDictionary*)json:(NSString*)url;
 
++ (NSDictionary*)jsonWithParts:(NSArray*)parts;
+
 @end
