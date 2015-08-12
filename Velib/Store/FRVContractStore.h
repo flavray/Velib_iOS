@@ -14,4 +14,6 @@
 
 + (instancetype) sharedStore;
 
+- (void)refresh;
+
 @end

@@ -58,6 +58,13 @@
 
 #pragma mark - Database manipulation
 
+- (void)refresh
+{
+    [self update:YES];
+
+    _allItems = [FRVContract allObjects];
+}
+
 - (void)update:(BOOL)force
 {
     NSDate* lastUpdate = [FRVLastUpdate lastUpdateForClass:[self class]];

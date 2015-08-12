@@ -23,6 +23,10 @@
 
     if (self) {
         [self.navigationItem setTitle:@"Contracts"];
+        
+        [self.navigationItem setLeftBarButtonItem:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
+                                                                                                target:self
+                                                                                                action:@selector(refresh:)]];
 
         _contracts = [[FRVContractStore sharedStore] allItems];
     }
@@ -62,6 +66,15 @@
     cell.stationsCountLabel.text = [NSString stringWithFormat:@"%d stations",contract.stationsCount];
 
     return cell;
+}
+
+# pragma mark - Refresh
+
+- (void)refresh:(id)sender
+{
+    [[FRVContractStore sharedStore] refresh];
+    
+    [self.tableView reloadData];
 }
 
 #pragma mark - Dynamic Type
