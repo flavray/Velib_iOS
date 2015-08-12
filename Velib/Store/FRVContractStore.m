@@ -10,6 +10,7 @@
 
 #import "FRVContractStore.h"
 #import "FRVContract.h"
+#import "FRVFetcher.h"
 #import "FRVLastUpdate.h"
 
 @interface FRVContractStore ()
@@ -46,7 +47,7 @@
     self = [super init];
 
     if (self) {
-        _updateInterval = 10 * 24 * 60 * 60;  // 10 days
+        _updateInterval = 0; // 10 * 24 * 60 * 60;  // 10 days
         [self update];
 
         _allItems = [FRVContract allObjects];
@@ -63,21 +64,19 @@
 
     // need to update if never updated or last update is too far in the past
     if ((!lastUpdate) || ([lastUpdate timeIntervalSinceNow] + [self updateInterval] < 0)) {
-        [self fetch];
-        [FRVLastUpdate setLastUpdateForClass:[self class]];
+        if ([self fetch])
+            [FRVLastUpdate setLastUpdateForClass:[self class]];
     }
 }
 
-- (void)fetch
+- (BOOL)fetch
 {
-    NSError* error;
+    NSDictionary* json = [FRVFetcher json:@"/contracts"];
+    
+    if (!json)
+        return NO;
 
-    NSData *response = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:@"http://localhost:3042/contracts.json"]];
-
-    NSArray *contracts = [[NSJSONSerialization
-                           JSONObjectWithData:response
-                           options:kNilOptions
-                           error:&error] objectForKey:@"contracts"];
+    NSArray *contracts = [json objectForKey:@"contracts"];
     
     RLMRealm* realm = [RLMRealm defaultRealm];
 
@@ -89,6 +88,8 @@
                                      withValue:contract];
         }
     }];
+    
+    return YES;
 }
 
 @end
