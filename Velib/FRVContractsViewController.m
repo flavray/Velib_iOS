@@ -23,7 +23,7 @@
 
     if (self) {
         [self.navigationItem setTitle:@"Contracts"];
-        
+
         [self.navigationItem setLeftBarButtonItem:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
                                                                                                 target:self
                                                                                                 action:@selector(refresh:)]];
@@ -68,12 +68,23 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // FRVContract* contract = [[self contracts] objectAtIndex:indexPath.row];
+
+    // FRVContractViewController* cvc = [[FRVContractViewController alloc] initWithContract:contract];
+
+    // [self.navigationController pushViewController:cvc animated:YES];
+}
+
 # pragma mark - Refresh
 
 - (void)refresh:(id)sender
 {
     [[FRVContractStore sharedStore] refresh];
-    
+
+    self.contracts = [[FRVContractStore sharedStore] allItems];
+
     [self.tableView reloadData];
 }
 
