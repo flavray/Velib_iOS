@@ -72,13 +72,13 @@
 {
     NSError* error;
 
-    NSData *response = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:@"http://localhost:3000/contracts"]];
+    NSData *response = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:@"http://localhost:3042/contracts.json"]];
 
     NSArray *contracts = [[NSJSONSerialization
                            JSONObjectWithData:response
                            options:kNilOptions
                            error:&error] objectForKey:@"contracts"];
-
+    
     RLMRealm* realm = [RLMRealm defaultRealm];
 
     [realm transactionWithBlock:^{
