@@ -58,15 +58,20 @@
 
 #pragma mark - Database manipulation
 
-- (void)update
+- (void)update:(BOOL)force
 {
     NSDate* lastUpdate = [FRVLastUpdate lastUpdateForClass:[self class]];
 
     // need to update if never updated or last update is too far in the past
-    if ((!lastUpdate) || ([lastUpdate timeIntervalSinceNow] + [self updateInterval] < 0)) {
+    if (force || (!lastUpdate) || ([lastUpdate timeIntervalSinceNow] + [self updateInterval] < 0)) {
         if ([self fetch])
             [FRVLastUpdate setLastUpdateForClass:[self class]];
     }
+}
+
+- (void)update
+{
+    [self update:NO];
 }
 
 - (BOOL)fetch
