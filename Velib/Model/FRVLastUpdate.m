@@ -12,36 +12,48 @@
 
 + (NSString*)primaryKey
 {
-    return @"className";
+    return @"key";
 }
 
 + (NSDate*)lastUpdateForClass:(__unsafe_unretained Class)aClass
 {
     NSString* className = NSStringFromClass(aClass);
-    NSString* query = [NSString stringWithFormat:@"className = '%@'",className];
-
-    RLMResults* lastUpdates = [FRVLastUpdate objectsWhere:query];
-
-    if ([lastUpdates count] == 0)
-        return nil;
-
-    FRVLastUpdate* lastUpdate = [lastUpdates objectAtIndex:0];
-
-    return lastUpdate.lastUpdate;
+    
+    return [self lastUpdateForKey:className];
 }
 
 + (void)setLastUpdateForClass:(__unsafe_unretained Class)aClass
 {
     NSString* className = NSStringFromClass(aClass);
 
-    NSDictionary*data = @{ @"className": className, @"lastUpdate": [NSDate date] };
+    return [self setLastUpdateForKey:className];
+}
 
++ (NSDate*)lastUpdateForKey:(NSString*)key
+{
+    NSString* query = [NSString stringWithFormat:@"key = '%@'",key];
+    
+    RLMResults* lastUpdates = [FRVLastUpdate objectsWhere:query];
+    
+    if ([lastUpdates count] == 0)
+        return nil;
+    
+    FRVLastUpdate* lastUpdate = [lastUpdates objectAtIndex:0];
+    
+    return lastUpdate.lastUpdate;
+}
+
++ (void)setLastUpdateForKey:(NSString*)key
+{
+    NSDictionary*data = @{ @"key": key, @"lastUpdate": [NSDate date] };
+    
     RLMRealm* realm = [RLMRealm defaultRealm];
-
+    
     [realm transactionWithBlock:^{
         [FRVLastUpdate createOrUpdateInRealm:realm
                                    withValue:data];
     }];
 }
+
 
 @end

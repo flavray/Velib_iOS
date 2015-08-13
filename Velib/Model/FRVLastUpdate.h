@@ -10,11 +10,14 @@
 
 @interface FRVLastUpdate : RLMObject
 
-@property NSString* className;
+@property NSString* key;
 @property NSDate* lastUpdate;
 
 + (NSDate*)lastUpdateForClass:(__unsafe_unretained Class)aClass;
 + (void)setLastUpdateForClass:(__unsafe_unretained Class)aClass;
+
++ (NSDate*)lastUpdateForKey:(NSString*)key;
++ (void)setLastUpdateForKey:(NSString*)key;
 
 @end
 

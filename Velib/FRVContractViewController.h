@@ -7,12 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Mapbox.h"
 
 @class FRVContract;
 
-@interface FRVContractViewController : UIViewController
-
-@property (strong, nonatomic) FRVContract* contract;
+@interface FRVContractViewController : UIViewController <RMMapViewDelegate>
 
 - (instancetype)initWithContract:(FRVContract*)contract;
 

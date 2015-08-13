@@ -9,6 +9,9 @@
 #import "AppDelegate.h"
 #import "FRVContractsViewController.h"
 
+#import "FRVContractViewController.h"
+#import "FRVContractStore.h"
+
 @interface AppDelegate ()
 
 @end
@@ -19,7 +22,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
-    FRVContractsViewController* cvc = [[FRVContractsViewController alloc] init];
+    // FRVContractsViewController* cvc = [[FRVContractsViewController alloc] init];
+    
+    FRVContractViewController* cvc = [[FRVContractViewController alloc] initWithContract:[[[FRVContractStore sharedStore] allItems] objectAtIndex:0]];
 
     UINavigationController* nvc = [[UINavigationController alloc] initWithRootViewController:cvc];
 
