@@ -96,7 +96,7 @@
                                                                  andTitle:station.name]];
     }
 
-    NSLog(@"%lf", [start timeIntervalSinceNow]);
+    NSLog(@"%lf", -[start timeIntervalSinceNow]);
     
     self.mapView.clusteringEnabled = YES;
 }
@@ -132,12 +132,12 @@
 
 - (RMMapLayer*)clusterAnnotationLayer:(NSUInteger)clusterSize
 {
-    CGFloat radius = (CGFloat)clusterSize * 10;
+    CGFloat radius = (CGFloat)clusterSize * 12.5f;
 
     RMCircle *circle = [[RMCircle alloc] initWithView:self.mapView radiusInMeters:radius];
 
-    circle.lineColor = [UIColor colorWithRed:.5 green:.466 blue:.733 alpha:.75];
-    circle.fillColor = [UIColor colorWithRed:.5 green:.466 blue:.733 alpha:.25];
+    circle.lineColor = [UIColor colorWithRed:0.224 green:0.671 blue:0.780 alpha:1.000];
+    circle.fillColor = [UIColor colorWithRed:0.224 green:0.671 blue:0.780 alpha:0.250];
     circle.lineWidthInPixels = 2.0;
 
     // [(RMMarker *)circle setTextForegroundColor:[UIColor whiteColor]];
