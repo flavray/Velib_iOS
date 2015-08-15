@@ -10,6 +10,7 @@
 #import "FRVContract.h"
 #import "FRVStation.h"
 #import "FRVStationStore.h"
+#import "FRVStationViewController.h"
 
 #import <CoreLocation/CoreLocation.h>
 
@@ -165,7 +166,13 @@
 - (void)tapOnCalloutAccessoryControl:(UIControl *)control
                        forAnnotation:(RMAnnotation *)annotation onMap:(RMMapView *)map
 {
-    NSLog(@"Callout for station %@", (FRVStation*)annotation.userInfo);
+    FRVStation* station = (FRVStation*)annotation.userInfo;
+
+    NSLog(@"Callout for station %@", station);
+
+    FRVStationViewController* svc = [[FRVStationViewController alloc] initWithStation:station];
+
+    [self.navigationController pushViewController:svc animated:YES];
 }
 
 #pragma mark - Clustering on zoom
