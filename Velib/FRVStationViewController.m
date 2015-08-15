@@ -8,6 +8,7 @@
 
 #import "FRVStationViewController.h"
 #import "FRVStation.h"
+#import "FRVPredictionStore.h"
 
 @interface FRVStationViewController ()
 
@@ -16,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UILabel* bikeStandsLabel;
 
 @property (strong, nonatomic) FRVStation* station;
+@property (strong, nonatomic) NSArray* predictions;
 
 @end
 
@@ -29,6 +31,9 @@
 
     if (self) {
         _station = station;
+        _predictions = [[FRVPredictionStore sharedStore] ofStation:station];
+
+        NSLog(@"#Predictions for station: %ld", (unsigned long)[_predictions count]);
     }
 
     return self;

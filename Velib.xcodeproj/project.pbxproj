@@ -22,6 +22,8 @@
 		FF8158311B7FEF4700926C44 /* FRVStationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF81582F1B7FEF4700926C44 /* FRVStationViewController.m */; };
 		FF8158321B7FEF4700926C44 /* FRVStationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF8158301B7FEF4700926C44 /* FRVStationViewController.xib */; };
 		FF8158351B7FFA6600926C44 /* FRVHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8158341B7FFA6600926C44 /* FRVHelper.m */; };
+		FF8158381B7FFCBD00926C44 /* FRVPredictionStore.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8158371B7FFCBD00926C44 /* FRVPredictionStore.m */; };
+		FF81583B1B8002AE00926C44 /* FRVPrediction.m in Sources */ = {isa = PBXBuildFile; fileRef = FF81583A1B8002AE00926C44 /* FRVPrediction.m */; };
 		FF8256221B7F48D2000FA836 /* applidium.gpx in Resources */ = {isa = PBXBuildFile; fileRef = FF8256211B7F48D2000FA836 /* applidium.gpx */; };
 		FF8256241B7F7CE7000FA836 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF8256231B7F7CE7000FA836 /* Realm.framework */; };
 		FF95C0121B7B8FA400678145 /* FRVFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = FF95C0111B7B8FA400678145 /* FRVFetcher.m */; };
@@ -75,6 +77,10 @@
 		FF8158301B7FEF4700926C44 /* FRVStationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FRVStationViewController.xib; sourceTree = "<group>"; };
 		FF8158331B7FFA6600926C44 /* FRVHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRVHelper.h; sourceTree = "<group>"; };
 		FF8158341B7FFA6600926C44 /* FRVHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRVHelper.m; sourceTree = "<group>"; };
+		FF8158361B7FFCBD00926C44 /* FRVPredictionStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FRVPredictionStore.h; path = Store/FRVPredictionStore.h; sourceTree = "<group>"; };
+		FF8158371B7FFCBD00926C44 /* FRVPredictionStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FRVPredictionStore.m; path = Store/FRVPredictionStore.m; sourceTree = "<group>"; };
+		FF8158391B8002AE00926C44 /* FRVPrediction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FRVPrediction.h; path = Model/FRVPrediction.h; sourceTree = "<group>"; };
+		FF81583A1B8002AE00926C44 /* FRVPrediction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FRVPrediction.m; path = Model/FRVPrediction.m; sourceTree = "<group>"; };
 		FF8256211B7F48D2000FA836 /* applidium.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = applidium.gpx; sourceTree = "<group>"; };
 		FF8256231B7F7CE7000FA836 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		FF95C0101B7B8FA400678145 /* FRVFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRVFetcher.h; sourceTree = "<group>"; };
@@ -196,6 +202,8 @@
 				FFBA596B1B7CB99A00BC3E16 /* FRVStation.m */,
 				FF100F7D1B777F720069B4C1 /* FRVLastUpdate.h */,
 				FF100F7E1B777F720069B4C1 /* FRVLastUpdate.m */,
+				FF8158391B8002AE00926C44 /* FRVPrediction.h */,
+				FF81583A1B8002AE00926C44 /* FRVPrediction.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -207,6 +215,8 @@
 				FF100F7B1B777CEF0069B4C1 /* FRVContractStore.m */,
 				FFBA596D1B7CBAA000BC3E16 /* FRVStationStore.h */,
 				FFBA596E1B7CBAA000BC3E16 /* FRVStationStore.m */,
+				FF8158361B7FFCBD00926C44 /* FRVPredictionStore.h */,
+				FF8158371B7FFCBD00926C44 /* FRVPredictionStore.m */,
 				FF8158331B7FFA6600926C44 /* FRVHelper.h */,
 				FF8158341B7FFA6600926C44 /* FRVHelper.m */,
 			);
@@ -356,6 +366,8 @@
 				FF8158311B7FEF4700926C44 /* FRVStationViewController.m in Sources */,
 				FF100F7C1B777CEF0069B4C1 /* FRVContractStore.m in Sources */,
 				FF8158351B7FFA6600926C44 /* FRVHelper.m in Sources */,
+				FF8158381B7FFCBD00926C44 /* FRVPredictionStore.m in Sources */,
+				FF81583B1B8002AE00926C44 /* FRVPrediction.m in Sources */,
 				FF100F781B776FB90069B4C1 /* FRVContractCell.m in Sources */,
 				FF100F7F1B777F720069B4C1 /* FRVLastUpdate.m in Sources */,
 				FF100F741B776B3C0069B4C1 /* FRVContract.m in Sources */,
