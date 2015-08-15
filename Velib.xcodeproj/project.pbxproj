@@ -458,7 +458,7 @@
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/flavr/Documents/iOS/Velib_iOS/Velib/Mapbox/Headers,
+					"$(SRCROOT)/Velib/Mapbox/Headers",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 				);
 				INFOPLIST_FILE = Velib/Info.plist;
@@ -483,7 +483,7 @@
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/flavr/Documents/iOS/Velib_iOS/Velib/Mapbox/Headers,
+					"$(SRCROOT)/Velib/Mapbox/Headers",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 				);
 				INFOPLIST_FILE = Velib/Info.plist;
