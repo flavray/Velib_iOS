@@ -52,9 +52,6 @@
     
     if (self) {
         _updateInterval = 10 * 24 * 60 * 60;  // 10 days
-        // [self update];
-        
-        // _allItems = [FRVContract allObjects];
     }
     
     return self;
@@ -95,10 +92,17 @@
 {
     NSDictionary* json = [FRVFetcher jsonWithParts:@[@"/contracts", contractId, @"stations"]];
     
-    if (!json)
+    if (!json) {
+        NSLog(@"Stations response is nil");
         return NO;
+    }
     
     NSArray *stations = [json objectForKey:@"stations"];
+
+    if (!stations) {
+        NSLog(@"No `stations`");
+        return NO;
+    }
     
     RLMRealm* realm = [RLMRealm defaultRealm];
     

@@ -27,6 +27,11 @@
     NSError* error;
     
     NSData *response = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:[self buildURL:url]]];
+
+    if (!response) {
+        NSLog(@"No response");
+        return nil;
+    }
     
     NSDictionary *result = [NSJSONSerialization JSONObjectWithData:response
                                                            options:kNilOptions
