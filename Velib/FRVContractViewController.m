@@ -91,9 +91,12 @@
 
     for (FRVStation* station in self.stations) {
         CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(station.latitude, station.longitude);
-        [self.mapView addAnnotation:[[RMAnnotation alloc] initWithMapView:self.mapView
-                                                               coordinate:coordinate
-                                                                 andTitle:station.name]];
+
+        RMAnnotation* annotation = [[RMAnnotation alloc] initWithMapView:self.mapView
+                                                              coordinate:coordinate
+                                                                andTitle:station.name];
+        [self.mapView addAnnotation:annotation];
+        annotation.userInfo = station;  // Store the station to retrieve it later in other methods
     }
 
     NSLog(@"%lf", -[start timeIntervalSinceNow]);
@@ -103,7 +106,7 @@
 
 - (void)mapView:(RMMapView *)mapView didSelectAnnotation:(RMAnnotation *)annotation
 {
-    NSLog(@"%@", annotation);
+    NSLog(@"%@", (FRVStation*)annotation.userInfo);
 }
 
 #pragma mark - Annotation layers
