@@ -13,6 +13,7 @@
 #import "FRVStation.h"
 #import "FRVFetcher.h"
 #import "FRVLastUpdate.h"
+#import "FRVHelper.h"
 
 @interface FRVStationStore ()
 
@@ -59,22 +60,22 @@
 
 #pragma mark - Database manipulation
 
-- (RLMResults*)ofContract:(FRVContract*)contract
+- (NSArray*)ofContract:(FRVContract*)contract
 {
     NSString* contractId = [NSString stringWithFormat:@"%i", contract.id];
     
     RLMResults* results = [self.allItems objectForKey:contractId];
     
     if (results)
-        return results;
+        return [FRVHelper resultsToArray:results];
     
     [self update:NO withContract:contractId];
     
     results = [self stationsForContract:contract];
     
     [self.allItems setValue:results forKey:contractId];
-    
-    return results;
+
+    return [FRVHelper resultsToArray:results];
 }
 
 - (void)update:(BOOL)force withContract:(NSString*)contractId
@@ -91,21 +92,21 @@
 - (BOOL)fetchContract:(NSString*)contractId
 {
     NSDictionary* json = [FRVFetcher jsonWithParts:@[@"/contracts", contractId, @"stations"]];
-    
+
     if (!json) {
         NSLog(@"Stations response is nil");
         return NO;
     }
-    
+
     NSArray *stations = [json objectForKey:@"stations"];
 
     if (!stations) {
         NSLog(@"No `stations`");
         return NO;
     }
-    
+
     RLMRealm* realm = [RLMRealm defaultRealm];
-    
+
     [realm transactionWithBlock:^{
         RLMResults* allStations = [FRVStation objectsWhere:@"contractId = %d", [contractId intValue]];
         [realm deleteObjects:allStations];
@@ -115,7 +116,7 @@
                                      withValue:station];
         }
     }];
-    
+
     return YES;
 }
 

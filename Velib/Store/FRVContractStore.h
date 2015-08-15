@@ -10,7 +10,7 @@
 
 @interface FRVContractStore : NSObject
 
-@property (nonatomic, readonly) RLMResults* allItems;
+@property (nonatomic, readonly) NSArray* allItems;
 
 + (instancetype) sharedStore;
 

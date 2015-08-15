@@ -11,6 +11,6 @@
 
 @interface FRVContractsViewController : UITableViewController
 
-@property (strong, nonatomic) RLMResults* contracts;
+@property (strong, nonatomic) NSArray* contracts;
 
 @end

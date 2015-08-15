@@ -17,7 +17,7 @@
 @interface FRVContractViewController ()
 
 @property (strong, nonatomic) FRVContract* contract;
-@property (strong, nonatomic) RLMResults* stations;
+@property (strong, nonatomic) NSArray* stations;
 
 @property (strong, nonatomic) RMMapView* mapView;
 

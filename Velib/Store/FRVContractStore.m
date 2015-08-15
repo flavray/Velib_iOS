@@ -12,6 +12,7 @@
 #import "FRVContract.h"
 #import "FRVFetcher.h"
 #import "FRVLastUpdate.h"
+#import "FRVHelper.h"
 
 @interface FRVContractStore ()
 
@@ -50,7 +51,7 @@
         _updateInterval = 10 * 24 * 60 * 60;  // 10 days
         [self update];
 
-        _allItems = [FRVContract allObjects];
+        _allItems = [FRVHelper resultsToArray:[FRVContract allObjects]];
     }
 
     return self;
@@ -62,7 +63,7 @@
 {
     [self update:YES];
 
-    _allItems = [FRVContract allObjects];
+    _allItems = [FRVHelper resultsToArray:[FRVContract allObjects]];
 }
 
 - (void)update:(BOOL)force

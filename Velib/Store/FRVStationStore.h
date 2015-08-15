@@ -15,6 +15,6 @@
 
 + (instancetype)sharedStore;
 
-- (RLMResults*)ofContract:(FRVContract*)contract;
+- (NSArray*)ofContract:(FRVContract*)contract;
 
 @end
