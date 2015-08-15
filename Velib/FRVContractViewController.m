@@ -11,10 +11,18 @@
 #import "FRVStation.h"
 #import "FRVStationStore.h"
 
+#import <CoreLocation/CoreLocation.h>
+
 @interface FRVContractViewController ()
 
 @property (strong, nonatomic) FRVContract* contract;
 @property (strong, nonatomic) RLMResults* stations;
+
+@property (strong, nonatomic) RMMapView* mapView;
+
+@property (strong, nonatomic) CLLocationManager* locationManager;
+
+@property BOOL locationFound;
 
 @end
 
@@ -32,10 +40,22 @@
         _contract = contract;
         _stations = [[FRVStationStore sharedStore] ofContract:self.contract];
         
-        NSLog(@"%li", self.stations.count);
+        NSLog(@"%lu", (unsigned long)[self.stations count]);
+
+        [self initLocation];
     }
     
     return self;
+}
+
+- (void)initLocation
+{
+    _locationManager = [[CLLocationManager alloc] init];
+    _locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    _locationManager.delegate = self;
+    [_locationManager startUpdatingLocation];
+
+    _locationFound = NO;
 }
 
 #pragma mark - View methods
@@ -48,69 +68,37 @@
     
     RMMapboxSource *tileSource = [[RMMapboxSource alloc] initWithMapID:@"mapbox.streets"];
     
-    RMMapView *mapView = [[RMMapView alloc] initWithFrame:self.view.bounds
-                                            andTilesource:tileSource];
+    self.mapView = [[RMMapView alloc] initWithFrame:self.view.bounds
+                                      andTilesource:tileSource];
 
-    mapView.delegate = self;
+    self.mapView.delegate = self;
 
-    mapView.zoom = 11;
+    self.mapView.zoom = 13.0f;
 
     CLLocationCoordinate2D center = CLLocationCoordinate2DMake(self.contract.latitude, self.contract.longitude);
-    mapView.centerCoordinate = center;
+    self.mapView.centerCoordinate = center;
+
+
+    self.mapView.showsUserLocation = YES;
+
+    self.mapView.hideAttribution = YES;
     
-    [self.view addSubview:mapView];
+    [self.view addSubview:self.mapView];
     
-    mapView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-    
+    self.mapView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+
+    NSDate* start = [NSDate date];
+
     for (FRVStation* station in self.stations) {
         CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(station.latitude, station.longitude);
-        [mapView addAnnotation:[[RMAnnotation alloc] initWithMapView:mapView
-                                                          coordinate:coordinate
-                                                            andTitle:station.name]];
+        [self.mapView addAnnotation:[[RMAnnotation alloc] initWithMapView:self.mapView
+                                                               coordinate:coordinate
+                                                                 andTitle:station.name]];
     }
-    
-    mapView.clusteringEnabled = YES;
-}
 
-- (RMMapLayer *)mapView:(RMMapView *)mapView layerForAnnotation:(RMAnnotation *)annotation
-{
-    if (annotation.isUserLocationAnnotation)
-        return nil;
+    NSLog(@"%lf", [start timeIntervalSinceNow]);
     
-    RMMapLayer *marker = nil;
-    
-    if (annotation.isClusterAnnotation) {
-        marker = [[RMMarker alloc] initWithUIImage:[UIImage imageNamed:@"circle.png"]];
-        
-        marker.opacity = 0.85;
-        
-        // set the size of the circle
-        marker.bounds = CGRectMake(0, 0, 90, 90);
-        
-        /*
-        // change the size of the circle depending on the cluster's size
-        if ([annotation.clusteredAnnotations count] > 100) {
-            layer.bounds = CGRectMake(0, 0, 70, 70);
-        } else if ([annotation.clusteredAnnotations count] > 200) {
-            layer.bounds = CGRectMake(0, 0, 100, 100);
-        } else if ([annotation.clusteredAnnotations count] > 300) {
-            layer.bounds = CGRectMake(0, 0, 120, 120);
-        }
-        */
-        
-        [(RMMarker *)marker setTextForegroundColor:[UIColor whiteColor]];
-        
-        [(RMMarker *)marker changeLabelUsingText:[NSString stringWithFormat:@"%lu",
-                                                 (unsigned long)[annotation.clusteredAnnotations count]]];
-    }
-    else {
-        marker = [[RMMarker alloc] initWithMapboxMarkerImage:@"bicycle"
-                                                  tintColor:[UIColor colorWithRed:0.224 green:0.671 blue:0.780 alpha:1.000]];
-        
-        marker.canShowCallout = YES;
-    }
-    
-    return marker;
+    self.mapView.clusteringEnabled = YES;
 }
 
 - (void)mapView:(RMMapView *)mapView didSelectAnnotation:(RMAnnotation *)annotation
@@ -118,20 +106,73 @@
     NSLog(@"%@", annotation);
 }
 
-/*
+#pragma mark - Annotation layers
+
 - (RMMapLayer *)mapView:(RMMapView *)mapView layerForAnnotation:(RMAnnotation *)annotation
 {
-    if (annotation.isUserLocationAnnotation)
-        return nil;
-    
-    // add Maki icon and color the marker
-    RMMarker *marker = [[RMMarker alloc] initWithMapboxMarkerImage:@"bicycle"
-                                                         tintColor:[UIColor colorWithRed:0.224 green:0.671 blue:0.780 alpha:1.000]];
-    
-    marker.canShowCallout = YES;
-    
-    return marker;
+    RMMapLayer* layer = nil;
+
+    if (annotation.isUserLocationAnnotation) {
+        layer = [self userAnnotationLayer];
+    } else if (annotation.isClusterAnnotation) {
+        layer = [self clusterAnnotationLayer:[annotation.clusteredAnnotations count]];
+    } else {
+        layer = [self basicAnnotationLayer];
+        layer.canShowCallout = YES;
+    }
+
+    return layer;
 }
- */
+
+- (RMMapLayer*)userAnnotationLayer
+{
+    return [[RMMarker alloc] initWithMapboxMarkerImage:@"pitch"
+                                             tintColor:[UIColor colorWithRed:0.124 green:0.571 blue:0.480 alpha:1.000]];
+}
+
+- (RMMapLayer*)clusterAnnotationLayer:(NSUInteger)clusterSize
+{
+    CGFloat radius = (CGFloat)clusterSize * 10;
+
+    RMCircle *circle = [[RMCircle alloc] initWithView:self.mapView radiusInMeters:radius];
+
+    circle.lineColor = [UIColor colorWithRed:.5 green:.466 blue:.733 alpha:.75];
+    circle.fillColor = [UIColor colorWithRed:.5 green:.466 blue:.733 alpha:.25];
+    circle.lineWidthInPixels = 2.0;
+
+    // [(RMMarker *)circle setTextForegroundColor:[UIColor whiteColor]];
+    // [(RMMarker *)circle changeLabelUsingText:[NSString stringWithFormat:@"%lu", (unsigned long)clusterSize]];
+
+    return circle;
+}
+
+- (RMMapLayer*)basicAnnotationLayer
+{
+    return [[RMMarker alloc] initWithMapboxMarkerImage:@"bicycle"
+                                            tintColor:[UIColor colorWithRed:0.224 green:0.671 blue:0.780 alpha:1.000]];
+}
+
+#pragma mark - Clustering on zoom
+
+- (void)afterMapZoom:(RMMapView *)map byUser:(BOOL)wasUserAction
+{
+    if (self.mapView.clusteringEnabled && (self.mapView.zoom >= 14.0f))
+        self.mapView.clusteringEnabled = NO;
+    else if ((!self.mapView.clusteringEnabled) && (self.mapView.zoom < 14.0f))
+        self.mapView.clusteringEnabled = YES;
+}
+
+#pragma mark - Location service
+
+-(void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+{
+    if (self.locationFound)
+        return;
+
+    self.mapView.centerCoordinate = CLLocationCoordinate2DMake(newLocation.coordinate.latitude, newLocation.coordinate.longitude);
+    self.mapView.zoom = 14.0f;
+    self.mapView.clusteringEnabled = NO;
+    self.locationFound = YES;
+}
 
 @end

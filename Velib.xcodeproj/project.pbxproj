@@ -20,6 +20,7 @@
 		FF100F791B776FB90069B4C1 /* FRVContractCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF100F771B776FB90069B4C1 /* FRVContractCell.xib */; };
 		FF100F7C1B777CEF0069B4C1 /* FRVContractStore.m in Sources */ = {isa = PBXBuildFile; fileRef = FF100F7B1B777CEF0069B4C1 /* FRVContractStore.m */; };
 		FF100F7F1B777F720069B4C1 /* FRVLastUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = FF100F7E1B777F720069B4C1 /* FRVLastUpdate.m */; };
+		FF8256221B7F48D2000FA836 /* applidium.gpx in Resources */ = {isa = PBXBuildFile; fileRef = FF8256211B7F48D2000FA836 /* applidium.gpx */; };
 		FF95C0121B7B8FA400678145 /* FRVFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = FF95C0111B7B8FA400678145 /* FRVFetcher.m */; };
 		FFBA596C1B7CB99A00BC3E16 /* FRVStation.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBA596B1B7CB99A00BC3E16 /* FRVStation.m */; };
 		FFBA596F1B7CBAA000BC3E16 /* FRVStationStore.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBA596E1B7CBAA000BC3E16 /* FRVStationStore.m */; };
@@ -67,6 +68,7 @@
 		FF100F7B1B777CEF0069B4C1 /* FRVContractStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FRVContractStore.m; path = Store/FRVContractStore.m; sourceTree = "<group>"; };
 		FF100F7D1B777F720069B4C1 /* FRVLastUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FRVLastUpdate.h; path = Model/FRVLastUpdate.h; sourceTree = "<group>"; };
 		FF100F7E1B777F720069B4C1 /* FRVLastUpdate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FRVLastUpdate.m; path = Model/FRVLastUpdate.m; sourceTree = "<group>"; };
+		FF8256211B7F48D2000FA836 /* applidium.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = applidium.gpx; sourceTree = "<group>"; };
 		FF95C0101B7B8FA400678145 /* FRVFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRVFetcher.h; sourceTree = "<group>"; };
 		FF95C0111B7B8FA400678145 /* FRVFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRVFetcher.m; sourceTree = "<group>"; };
 		FFBA596A1B7CB99A00BC3E16 /* FRVStation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FRVStation.h; path = Model/FRVStation.h; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 		FF0B4D591B77663D00437F55 = {
 			isa = PBXGroup;
 			children = (
+				FF8256211B7F48D2000FA836 /* applidium.gpx */,
 				FFBD3CEE1B7BAAC400BE288C /* libMapbox.a */,
 				FF0B4D921B7769D300437F55 /* libc++.dylib */,
 				FF0B4D8E1B7767F400437F55 /* Default-568h@2x.png */,
@@ -314,6 +317,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF0B4D731B77663D00437F55 /* Images.xcassets in Resources */,
+				FF8256221B7F48D2000FA836 /* applidium.gpx in Resources */,
 				FFBD3CE11B7BA6EA00BE288C /* Mapbox in Resources */,
 				FFBA59711B7CD1B200BC3E16 /* circle.png in Resources */,
 				FF100F791B776FB90069B4C1 /* FRVContractCell.xib in Resources */,

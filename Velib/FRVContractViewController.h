@@ -11,7 +11,7 @@
 
 @class FRVContract;
 
-@interface FRVContractViewController : UIViewController <RMMapViewDelegate>
+@interface FRVContractViewController : UIViewController <RMMapViewDelegate, CLLocationManagerDelegate>
 
 - (instancetype)initWithContract:(FRVContract*)contract;
 
