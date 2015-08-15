@@ -121,7 +121,6 @@
         layer = [self clusterAnnotationLayer:[annotation.clusteredAnnotations count]];
     } else {
         layer = [self basicAnnotationLayer];
-        layer.canShowCallout = YES;
     }
 
     return layer;
@@ -151,8 +150,22 @@
 
 - (RMMapLayer*)basicAnnotationLayer
 {
-    return [[RMMarker alloc] initWithMapboxMarkerImage:@"bicycle"
+    RMMarker* marker = [[RMMarker alloc] initWithMapboxMarkerImage:@"bicycle"
                                             tintColor:[UIColor colorWithRed:0.224 green:0.671 blue:0.780 alpha:1.000]];
+
+    marker.canShowCallout = YES;
+
+    marker.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+
+    return marker;
+}
+
+#pragma mark - Callout
+
+- (void)tapOnCalloutAccessoryControl:(UIControl *)control
+                       forAnnotation:(RMAnnotation *)annotation onMap:(RMMapView *)map
+{
+    NSLog(@"Callout for station %@", (FRVStation*)annotation.userInfo);
 }
 
 #pragma mark - Clustering on zoom
