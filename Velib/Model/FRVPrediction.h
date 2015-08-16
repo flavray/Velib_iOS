@@ -8,11 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
-@interface FRVPrediction : NSObject
+@class FRVStation;
 
-- (instancetype)initWithValue:(NSDictionary*)value;
+@interface FRVPrediction : NSObject
 
 @property (strong, nonatomic) NSDate* datetime;
 @property NSInteger availableBikeStands;
+
+@property (strong, nonatomic) FRVStation* station;
+
+- (instancetype)initWithValue:(NSDictionary*)value station:(FRVStation*)station;
+
+- (NSInteger)availableBikes;
 
 @end

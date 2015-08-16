@@ -166,8 +166,6 @@
 {
     FRVStation* station = (FRVStation*)annotation.userInfo;
 
-    NSLog(@"Callout for station %@", station);
-
     FRVStationViewController* svc = [[FRVStationViewController alloc] initWithStation:station];
 
     [self.navigationController pushViewController:svc animated:YES];

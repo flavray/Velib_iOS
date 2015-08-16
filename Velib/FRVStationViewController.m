@@ -10,6 +10,7 @@
 #import "FRVStation.h"
 #import "FRVPrediction.h"
 #import "FRVPredictionStore.h"
+#import "FRVPredictionCell.h"
 
 @interface FRVStationViewController ()
 
@@ -34,14 +35,25 @@
     if (self) {
         [self.navigationItem setTitle:station.name];
 
+        // First prediction: current hour (== at most 59 minutes before)
+        NSDate* date = [[NSDate date] dateByAddingTimeInterval:-59*60];
+
         _station = station;
-        _predictions = [[FRVPredictionStore sharedStore] ofStation:station];
+        _predictions = [[FRVPredictionStore sharedStore] ofStation:station after:date];
     }
 
     return self;
 }
 
 #pragma mark - View method
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+
+    UINib* nib = [UINib nibWithNibName:@"FRVPredictionCell" bundle:nil];
+    [self.predictionsTableView registerNib:nib forCellReuseIdentifier:@"FRVPredictionCell"];
+}
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -64,15 +76,24 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *simpleTableIdentifier = @"PredictionCell";
+    static NSString *tableIdentifier = @"FRVPredictionCell";
 
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    FRVPrediction* prediction = [self.predictions objectAtIndex:indexPath.row];
+    FRVPredictionCell *cell = [tableView dequeueReusableCellWithIdentifier:tableIdentifier];
 
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+        cell = [[FRVPredictionCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:tableIdentifier];
     }
 
-    cell.textLabel.text = [NSString stringWithFormat:@"%ld", (long)[[self.predictions objectAtIndex:indexPath.row] availableBikeStands]];
+    static NSDateFormatter *formatter = nil;
+
+    if (!formatter) {
+        formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"HH:mm"];
+    }
+
+    cell.timeLabel.text = [formatter stringFromDate:prediction.datetime];
+    cell.numberLabel.text = [NSString stringWithFormat:@"%ld", [prediction availableBikes]];  // [NSString stringWithFormat:@"%ld/%d", (long)prediction.availableBikeStands, prediction.station.bikeStands];
 
     return cell;
 }

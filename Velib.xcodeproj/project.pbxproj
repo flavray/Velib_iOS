@@ -24,12 +24,15 @@
 		FF8158351B7FFA6600926C44 /* FRVHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8158341B7FFA6600926C44 /* FRVHelper.m */; };
 		FF8158381B7FFCBD00926C44 /* FRVPredictionStore.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8158371B7FFCBD00926C44 /* FRVPredictionStore.m */; };
 		FF81583B1B8002AE00926C44 /* FRVPrediction.m in Sources */ = {isa = PBXBuildFile; fileRef = FF81583A1B8002AE00926C44 /* FRVPrediction.m */; };
+		FF81583F1B80F48900926C44 /* FRVPredictionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FF81583D1B80F48900926C44 /* FRVPredictionCell.m */; };
+		FF8158401B80F48900926C44 /* FRVPredictionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF81583E1B80F48900926C44 /* FRVPredictionCell.xib */; };
+		FF8158461B80FC1900926C44 /* bicycle.png in Resources */ = {isa = PBXBuildFile; fileRef = FF8158451B80FC1900926C44 /* bicycle.png */; };
+		FF8158481B8101EC00926C44 /* bicycle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF8158471B8101EC00926C44 /* bicycle@2x.png */; };
 		FF8256221B7F48D2000FA836 /* applidium.gpx in Resources */ = {isa = PBXBuildFile; fileRef = FF8256211B7F48D2000FA836 /* applidium.gpx */; };
 		FF8256241B7F7CE7000FA836 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF8256231B7F7CE7000FA836 /* Realm.framework */; };
 		FF95C0121B7B8FA400678145 /* FRVFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = FF95C0111B7B8FA400678145 /* FRVFetcher.m */; };
 		FFBA596C1B7CB99A00BC3E16 /* FRVStation.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBA596B1B7CB99A00BC3E16 /* FRVStation.m */; };
 		FFBA596F1B7CBAA000BC3E16 /* FRVStationStore.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBA596E1B7CBAA000BC3E16 /* FRVStationStore.m */; };
-		FFBA59711B7CD1B200BC3E16 /* circle.png in Resources */ = {isa = PBXBuildFile; fileRef = FFBA59701B7CD1B200BC3E16 /* circle.png */; };
 		FFBD3CE11B7BA6EA00BE288C /* Mapbox in Resources */ = {isa = PBXBuildFile; fileRef = FFBD3CE01B7BA6EA00BE288C /* Mapbox */; };
 		FFBD3CE31B7BA7BF00BE288C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBD3CE21B7BA7BF00BE288C /* CoreLocation.framework */; };
 		FFBD3CE51B7BA7C700BE288C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBD3CE41B7BA7C700BE288C /* QuartzCore.framework */; };
@@ -81,6 +84,11 @@
 		FF8158371B7FFCBD00926C44 /* FRVPredictionStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FRVPredictionStore.m; path = Store/FRVPredictionStore.m; sourceTree = "<group>"; };
 		FF8158391B8002AE00926C44 /* FRVPrediction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FRVPrediction.h; path = Model/FRVPrediction.h; sourceTree = "<group>"; };
 		FF81583A1B8002AE00926C44 /* FRVPrediction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FRVPrediction.m; path = Model/FRVPrediction.m; sourceTree = "<group>"; };
+		FF81583C1B80F48900926C44 /* FRVPredictionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FRVPredictionCell.h; path = View/FRVPredictionCell.h; sourceTree = "<group>"; };
+		FF81583D1B80F48900926C44 /* FRVPredictionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FRVPredictionCell.m; path = View/FRVPredictionCell.m; sourceTree = "<group>"; };
+		FF81583E1B80F48900926C44 /* FRVPredictionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FRVPredictionCell.xib; path = View/FRVPredictionCell.xib; sourceTree = "<group>"; };
+		FF8158451B80FC1900926C44 /* bicycle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bicycle.png; sourceTree = "<group>"; };
+		FF8158471B8101EC00926C44 /* bicycle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bicycle@2x.png"; sourceTree = "<group>"; };
 		FF8256211B7F48D2000FA836 /* applidium.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = applidium.gpx; sourceTree = "<group>"; };
 		FF8256231B7F7CE7000FA836 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		FF95C0101B7B8FA400678145 /* FRVFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRVFetcher.h; sourceTree = "<group>"; };
@@ -89,7 +97,6 @@
 		FFBA596B1B7CB99A00BC3E16 /* FRVStation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FRVStation.m; path = Model/FRVStation.m; sourceTree = "<group>"; };
 		FFBA596D1B7CBAA000BC3E16 /* FRVStationStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FRVStationStore.h; path = Store/FRVStationStore.h; sourceTree = "<group>"; };
 		FFBA596E1B7CBAA000BC3E16 /* FRVStationStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FRVStationStore.m; path = Store/FRVStationStore.m; sourceTree = "<group>"; };
-		FFBA59701B7CD1B200BC3E16 /* circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circle.png; sourceTree = "<group>"; };
 		FFBD3CE01B7BA6EA00BE288C /* Mapbox */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Mapbox; sourceTree = "<group>"; };
 		FFBD3CE21B7BA7BF00BE288C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		FFBD3CE41B7BA7C700BE288C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -161,7 +168,6 @@
 				FF0B4D651B77663D00437F55 /* Supporting Files */,
 				FF95C0101B7B8FA400678145 /* FRVFetcher.h */,
 				FF95C0111B7B8FA400678145 /* FRVFetcher.m */,
-				FFBA59701B7CD1B200BC3E16 /* circle.png */,
 				FFBD3CE01B7BA6EA00BE288C /* Mapbox */,
 			);
 			path = Velib;
@@ -229,7 +235,12 @@
 				FF100F751B776FB90069B4C1 /* FRVContractCell.h */,
 				FF100F761B776FB90069B4C1 /* FRVContractCell.m */,
 				FF100F771B776FB90069B4C1 /* FRVContractCell.xib */,
+				FF81583C1B80F48900926C44 /* FRVPredictionCell.h */,
+				FF81583D1B80F48900926C44 /* FRVPredictionCell.m */,
+				FF81583E1B80F48900926C44 /* FRVPredictionCell.xib */,
 				FF8158301B7FEF4700926C44 /* FRVStationViewController.xib */,
+				FF8158451B80FC1900926C44 /* bicycle.png */,
+				FF8158471B8101EC00926C44 /* bicycle@2x.png */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -343,9 +354,11 @@
 				FF0B4D731B77663D00437F55 /* Images.xcassets in Resources */,
 				FF8256221B7F48D2000FA836 /* applidium.gpx in Resources */,
 				FFBD3CE11B7BA6EA00BE288C /* Mapbox in Resources */,
-				FFBA59711B7CD1B200BC3E16 /* circle.png in Resources */,
+				FF8158401B80F48900926C44 /* FRVPredictionCell.xib in Resources */,
+				FF8158481B8101EC00926C44 /* bicycle@2x.png in Resources */,
 				FF100F791B776FB90069B4C1 /* FRVContractCell.xib in Resources */,
 				FF0B4D8F1B7767F400437F55 /* Default-568h@2x.png in Resources */,
+				FF8158461B80FC1900926C44 /* bicycle.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,6 +389,7 @@
 				FFBA596F1B7CBAA000BC3E16 /* FRVStationStore.m in Sources */,
 				FFBD3CED1B7BA93300BE288C /* FRVContractViewController.m in Sources */,
 				FF0B4D6B1B77663D00437F55 /* AppDelegate.m in Sources */,
+				FF81583F1B80F48900926C44 /* FRVPredictionCell.m in Sources */,
 				FF95C0121B7B8FA400678145 /* FRVFetcher.m in Sources */,
 				FF0B4D681B77663D00437F55 /* main.m in Sources */,
 			);

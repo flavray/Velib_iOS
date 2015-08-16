@@ -16,4 +16,6 @@
 
 - (NSArray*)ofStation:(FRVStation*)station;
 
+- (NSArray*)ofStation:(FRVStation *)station after:(NSDate*)date;
+
 @end

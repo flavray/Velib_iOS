@@ -7,10 +7,11 @@
 //
 
 #import "FRVPrediction.h"
+#import "FRVStation.h"
 
 @implementation FRVPrediction
 
-- (instancetype)initWithValue:(NSDictionary *)value
+- (instancetype)initWithValue:(NSDictionary *)value station:(FRVStation*)station
 {
     self = [super init];
 
@@ -18,10 +19,17 @@
         NSTimeInterval timestamp = [[value objectForKey:@"timestamp"] doubleValue];
 
         _datetime = [NSDate dateWithTimeIntervalSince1970:timestamp];
-        _availableBikeStands = [[value objectForKey:@"available_bike_stands"] integerValue];
+        _availableBikeStands = [[value objectForKey:@"availableBikeStands"] integerValue];
+
+        _station = station;
     }
 
     return self;
+}
+
+- (NSInteger)availableBikes
+{
+    return self.station.bikeStands - self.availableBikeStands;
 }
 
 @end

@@ -71,6 +71,17 @@
     return [self.allItems valueForKey:key];
 }
 
+- (NSArray*)ofStation:(FRVStation *)station after:(NSDate*)date
+{
+    NSMutableArray* predictions = [NSMutableArray arrayWithArray:[self ofStation:station]];
+
+    while (([predictions count] > 0) && ([[[predictions objectAtIndex:0] datetime] compare:date] == NSOrderedAscending)) {
+        [predictions removeObjectAtIndex:0];
+    }
+
+    return [NSArray arrayWithArray:predictions];
+}
+
 #pragma mark - Database manipulation
 
 - (void)update:(BOOL)force withStation:(FRVStation*)station
@@ -111,7 +122,7 @@
     NSMutableArray* result = [[NSMutableArray alloc] init];
 
     for (NSDictionary* prediction in predictions)
-        [result addObject:[[FRVPrediction alloc] initWithValue:prediction]];
+        [result addObject:[[FRVPrediction alloc] initWithValue:prediction station:station]];
 
     return [NSArray arrayWithArray:result];
 }
