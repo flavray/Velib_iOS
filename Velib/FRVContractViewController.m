@@ -40,8 +40,6 @@
 
         _contract = contract;
         _stations = [[FRVStationStore sharedStore] ofContract:self.contract];
-        
-        NSLog(@"%lu", (unsigned long)[self.stations count]);
 
         [self initLocation];
     }

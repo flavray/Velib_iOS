@@ -10,7 +10,7 @@
 
 @class FRVStation;
 
-@interface FRVStationViewController : UIViewController
+@interface FRVStationViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
 
 - (instancetype)initWithStation:(FRVStation*)station;
 

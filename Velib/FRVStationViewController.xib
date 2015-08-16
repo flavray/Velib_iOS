@@ -9,6 +9,7 @@
                 <outlet property="addressLabel" destination="ohj-f4-O2z" id="lpj-eG-Xr1"/>
                 <outlet property="bikeStandsLabel" destination="Umr-L3-K8i" id="Hs5-ve-nIM"/>
                 <outlet property="nameLabel" destination="wqo-lX-JY5" id="gXr-5V-CNK"/>
+                <outlet property="predictionsTableView" destination="LtK-qP-3kd" id="HXT-lc-1nh"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -36,8 +37,12 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="LtK-qP-3kd">
-                    <rect key="frame" x="140" y="248" width="320" height="283"/>
+                    <rect key="frame" x="140" y="248" width="320" height="282"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="wqn-ei-E8o"/>
+                        <outlet property="delegate" destination="-1" id="Kq3-Ty-ffT"/>
+                    </connections>
                 </tableView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wqo-lX-JY5">
                     <rect key="frame" x="8" y="80" width="584" height="21"/>
@@ -63,7 +68,7 @@
                 <constraint firstItem="Umr-L3-K8i" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="PkA-fa-kEv"/>
                 <constraint firstItem="Umr-L3-K8i" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="V1Y-2x-6Gs"/>
                 <constraint firstItem="ohj-f4-O2z" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="dU3-LJ-WBc"/>
-                <constraint firstAttribute="bottom" secondItem="LtK-qP-3kd" secondAttribute="bottom" constant="69" id="eLv-x1-tow"/>
+                <constraint firstAttribute="bottom" secondItem="LtK-qP-3kd" secondAttribute="bottom" constant="70" id="eLv-x1-tow"/>
                 <constraint firstItem="LtK-qP-3kd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="140" id="eik-VD-fqR"/>
                 <constraint firstItem="LtK-qP-3kd" firstAttribute="top" secondItem="Umr-L3-K8i" secondAttribute="bottom" constant="35" id="fos-JF-6HE"/>
                 <constraint firstAttribute="trailing" secondItem="ohj-f4-O2z" secondAttribute="trailing" constant="8" id="giF-6q-zOT"/>
