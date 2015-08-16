@@ -93,7 +93,7 @@
     }
 
     cell.timeLabel.text = [formatter stringFromDate:prediction.datetime];
-    cell.numberLabel.text = [NSString stringWithFormat:@"%ld", [prediction availableBikes]];  // [NSString stringWithFormat:@"%ld/%d", (long)prediction.availableBikeStands, prediction.station.bikeStands];
+    cell.numberLabel.text = [NSString stringWithFormat:@"%ld", (unsigned long)[prediction availableBikes]];  // [NSString stringWithFormat:@"%ld/%d", (long)prediction.availableBikeStands, prediction.station.bikeStands];
 
     return cell;
 }
