@@ -104,4 +104,17 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (IBAction)openMaps:(id)sender {
+    CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(self.station.latitude, self.station.longitude);
+
+    MKPlacemark* placemark = [[MKPlacemark alloc] initWithCoordinate:coordinate addressDictionary:nil];
+
+    MKMapItem* mapItem = [[MKMapItem alloc] initWithPlacemark:placemark];
+    mapItem.name = self.station.name;
+
+    NSDictionary* launchOptions = @{MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeWalking};
+    MKMapItem* currentLocationMapItem = [MKMapItem mapItemForCurrentLocation];
+    [MKMapItem openMapsWithItems:@[currentLocationMapItem, mapItem] launchOptions:launchOptions];
+}
+
 @end

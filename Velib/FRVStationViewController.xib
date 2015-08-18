@@ -44,12 +44,18 @@
                         <outlet property="delegate" destination="-1" id="Kq3-Ty-ffT"/>
                     </connections>
                 </tableView>
-                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YwT-NA-lRk">
-                    <rect key="frame" x="0.0" y="19" width="600" height="44"/>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YwT-NA-lRk">
+                    <rect key="frame" x="0.0" y="18" width="600" height="44"/>
                     <items>
                         <barButtonItem systemItem="stop" id="SU8-os-Ni0">
                             <connections>
                                 <action selector="dismiss:" destination="-1" id="OZj-Dq-NMU"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem tag="1" systemItem="flexibleSpace" id="jmj-Ld-NRb"/>
+                        <barButtonItem tag="2" image="Map.png" id="8gr-fw-A4W" userLabel="Map">
+                            <connections>
+                                <action selector="openMaps:" destination="-1" id="DX0-Sq-OdK"/>
                             </connections>
                         </barButtonItem>
                     </items>
@@ -76,13 +82,19 @@
                 <constraint firstItem="wqo-lX-JY5" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="30" id="Lfs-mp-wfd"/>
                 <constraint firstAttribute="trailing" secondItem="LtK-qP-3kd" secondAttribute="trailing" constant="40" id="PS5-Jl-Omz"/>
                 <constraint firstItem="Umr-L3-K8i" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="PkA-fa-kEv"/>
+                <constraint firstItem="YwT-NA-lRk" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="TR0-kC-5EB"/>
                 <constraint firstItem="Umr-L3-K8i" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="V1Y-2x-6Gs"/>
+                <constraint firstAttribute="trailing" secondItem="YwT-NA-lRk" secondAttribute="trailing" id="bSi-wX-dfc"/>
                 <constraint firstItem="ohj-f4-O2z" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="dU3-LJ-WBc"/>
                 <constraint firstAttribute="bottom" secondItem="LtK-qP-3kd" secondAttribute="bottom" constant="35" id="eLv-x1-tow"/>
                 <constraint firstItem="LtK-qP-3kd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="40" id="eik-VD-fqR"/>
                 <constraint firstItem="LtK-qP-3kd" firstAttribute="top" secondItem="Umr-L3-K8i" secondAttribute="bottom" constant="35" id="fos-JF-6HE"/>
                 <constraint firstAttribute="trailing" secondItem="ohj-f4-O2z" secondAttribute="trailing" constant="8" id="giF-6q-zOT"/>
+                <constraint firstItem="YwT-NA-lRk" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="18" id="mvR-Oq-8qd"/>
             </constraints>
         </view>
     </objects>
+    <resources>
+        <image name="Map.png" width="22" height="22"/>
+    </resources>
 </document>

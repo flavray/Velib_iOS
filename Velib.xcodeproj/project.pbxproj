@@ -44,6 +44,8 @@
 		FFF0B4A01B836B4E00171549 /* FRVStationSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFF0B49E1B836B4E00171549 /* FRVStationSearchViewController.xib */; };
 		FFF0B4A41B836CB900171549 /* FRVStationSearchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FFF0B4A21B836CB900171549 /* FRVStationSearchCell.m */; };
 		FFF0B4A51B836CB900171549 /* FRVStationSearchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFF0B4A31B836CB900171549 /* FRVStationSearchCell.xib */; };
+		FFF0B4AA1B838FBF00171549 /* Map.png in Resources */ = {isa = PBXBuildFile; fileRef = FFF0B4A81B838FBF00171549 /* Map.png */; };
+		FFF0B4AB1B838FBF00171549 /* Map@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFF0B4A91B838FBF00171549 /* Map@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +117,8 @@
 		FFF0B4A11B836CB900171549 /* FRVStationSearchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FRVStationSearchCell.h; path = View/FRVStationSearchCell.h; sourceTree = "<group>"; };
 		FFF0B4A21B836CB900171549 /* FRVStationSearchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FRVStationSearchCell.m; path = View/FRVStationSearchCell.m; sourceTree = "<group>"; };
 		FFF0B4A31B836CB900171549 /* FRVStationSearchCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FRVStationSearchCell.xib; path = View/FRVStationSearchCell.xib; sourceTree = "<group>"; };
+		FFF0B4A81B838FBF00171549 /* Map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Map.png; sourceTree = "<group>"; };
+		FFF0B4A91B838FBF00171549 /* Map@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Map@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,6 +259,8 @@
 				FFF0B49E1B836B4E00171549 /* FRVStationSearchViewController.xib */,
 				FF8158451B80FC1900926C44 /* bicycle.png */,
 				FF8158471B8101EC00926C44 /* bicycle@2x.png */,
+				FFF0B4A81B838FBF00171549 /* Map.png */,
+				FFF0B4A91B838FBF00171549 /* Map@2x.png */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -366,11 +372,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFF0B4AA1B838FBF00171549 /* Map.png in Resources */,
 				FF8158321B7FEF4700926C44 /* FRVStationViewController.xib in Resources */,
 				FF0B4D731B77663D00437F55 /* Images.xcassets in Resources */,
 				FF8256221B7F48D2000FA836 /* applidium.gpx in Resources */,
 				FFBD3CE11B7BA6EA00BE288C /* Mapbox in Resources */,
 				FFF0B4A51B836CB900171549 /* FRVStationSearchCell.xib in Resources */,
+				FFF0B4AB1B838FBF00171549 /* Map@2x.png in Resources */,
 				FF8158401B80F48900926C44 /* FRVPredictionCell.xib in Resources */,
 				FF8158481B8101EC00926C44 /* bicycle@2x.png in Resources */,
 				FF100F791B776FB90069B4C1 /* FRVContractCell.xib in Resources */,

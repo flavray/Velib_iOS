@@ -28,6 +28,8 @@
     self = [super init];
 
     if (self) {
+        [self.navigationItem setTitle:@"Find a station"];
+
         _stations = [stations sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
             NSString* first = [(FRVStation*)a name];
             NSString* second = [(FRVStation*)b name];
