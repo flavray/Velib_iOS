@@ -15,23 +15,15 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-            <searchBar key="tableHeaderView" contentMode="redraw" id="APq-hw-6tK">
-                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                <textInputTraits key="textInputTraits"/>
-                <connections>
-                    <outlet property="delegate" destination="-1" id="Iyu-kE-2o2"/>
-                </connections>
-            </searchBar>
             <connections>
                 <outlet property="dataSource" destination="-1" id="Tng-2m-Rnh"/>
                 <outlet property="delegate" destination="-1" id="9aC-8N-iBw"/>
             </connections>
+            <point key="canvasLocation" x="467" y="116"/>
         </tableView>
         <searchDisplayController id="Wtb-Hh-Zay">
             <connections>
                 <outlet property="delegate" destination="-1" id="15a-RM-vFz"/>
-                <outlet property="searchBar" destination="APq-hw-6tK" id="Xg1-XZ-M0e"/>
                 <outlet property="searchContentsController" destination="-1" id="kp2-yy-y2c"/>
                 <outlet property="searchResultsDataSource" destination="-1" id="nIr-ob-dd8"/>
                 <outlet property="searchResultsDelegate" destination="-1" id="Qdg-en-Fhe"/>

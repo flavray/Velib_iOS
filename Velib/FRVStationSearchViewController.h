@@ -10,7 +10,7 @@
 
 @class FRVStation;
 
-@interface FRVStationSearchViewController : UITableViewController <UISearchResultsUpdating, UISearchBarDelegate>
+@interface FRVStationSearchViewController : UITableViewController<UISearchResultsUpdating, UISearchBarDelegate>
 
 - (instancetype)initWithStations:(NSArray*)stations;
 

@@ -47,6 +47,7 @@
     self.searchController.searchResultsUpdater = self;
     self.searchController.dimsBackgroundDuringPresentation = NO;
     self.searchController.searchBar.delegate = self;
+    self.searchController.hidesNavigationBarDuringPresentation = NO;
 
     [self.searchController.searchBar sizeToFit];
 
@@ -105,7 +106,7 @@
 
     FRVStationViewController* svc = [[FRVStationViewController alloc] initWithStation:station];
 
-    // [self.navigationController pushViewController:svc animated:YES];
+    self.searchController.active = NO;
     [self presentViewController:svc animated:YES completion:nil];
 }
 
