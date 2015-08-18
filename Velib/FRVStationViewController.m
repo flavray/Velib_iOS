@@ -98,4 +98,10 @@
     return cell;
 }
 
+#pragma mark - Dismiss
+
+- (IBAction)dismiss:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 @end

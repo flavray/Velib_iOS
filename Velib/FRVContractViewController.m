@@ -168,7 +168,8 @@
 
     FRVStationViewController* svc = [[FRVStationViewController alloc] initWithStation:station];
 
-    [self.navigationController pushViewController:svc animated:YES];
+    // [self.navigationController pushViewController:svc animated:YES];
+    [self presentViewController:svc animated:YES completion:nil];
 }
 
 #pragma mark - Clustering on zoom
