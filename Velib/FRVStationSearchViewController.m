@@ -51,6 +51,8 @@
 
     [self.searchController.searchBar sizeToFit];
 
+    self.definesPresentationContext = YES;
+
     self.tableView.tableHeaderView = self.searchController.searchBar;
 
     UINib* nib = [UINib nibWithNibName:@"FRVStationSearchCell" bundle:nil];
