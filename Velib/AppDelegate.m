@@ -22,11 +22,17 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
-    // FRVContractsViewController* cvc = [[FRVContractsViewController alloc] init];
-    
-    FRVContractViewController* cvc = [[FRVContractViewController alloc] initWithContract:[[[FRVContractStore sharedStore] allItems] objectAtIndex:0]];
+    UIViewController* rootViewController = nil;
+    NSArray* contracts = [[FRVContractStore sharedStore] allItems];
 
-    UINavigationController* nvc = [[UINavigationController alloc] initWithRootViewController:cvc];
+    if ([contracts count] == 0) {
+        rootViewController = [[FRVContractsViewController alloc] init];
+    }
+    else {
+        rootViewController = [[FRVContractViewController alloc] initWithContract:[contracts objectAtIndex:0]];
+    }
+
+    UINavigationController* nvc = [[UINavigationController alloc] initWithRootViewController:rootViewController];
 
     self.window.rootViewController = nvc;
 

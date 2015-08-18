@@ -81,7 +81,7 @@
     FRVPrediction* prediction = [self.predictions objectAtIndex:indexPath.row];
     FRVPredictionCell *cell = [tableView dequeueReusableCellWithIdentifier:tableIdentifier];
 
-    if (cell == nil) {
+    if (!cell) {
         cell = [[FRVPredictionCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:tableIdentifier];
     }
 

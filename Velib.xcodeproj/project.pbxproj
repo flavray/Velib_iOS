@@ -40,6 +40,10 @@
 		FFBD3CE91B7BA7D500BE288C /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBD3CE81B7BA7D500BE288C /* libz.dylib */; };
 		FFBD3CED1B7BA93300BE288C /* FRVContractViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBD3CEC1B7BA93300BE288C /* FRVContractViewController.m */; };
 		FFBD3CEF1B7BAAC400BE288C /* libMapbox.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBD3CEE1B7BAAC400BE288C /* libMapbox.a */; };
+		FFF0B49F1B836B4E00171549 /* FRVStationSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFF0B49D1B836B4E00171549 /* FRVStationSearchViewController.m */; };
+		FFF0B4A01B836B4E00171549 /* FRVStationSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFF0B49E1B836B4E00171549 /* FRVStationSearchViewController.xib */; };
+		FFF0B4A41B836CB900171549 /* FRVStationSearchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FFF0B4A21B836CB900171549 /* FRVStationSearchCell.m */; };
+		FFF0B4A51B836CB900171549 /* FRVStationSearchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFF0B4A31B836CB900171549 /* FRVStationSearchCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +109,12 @@
 		FFBD3CEB1B7BA93300BE288C /* FRVContractViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRVContractViewController.h; sourceTree = "<group>"; };
 		FFBD3CEC1B7BA93300BE288C /* FRVContractViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRVContractViewController.m; sourceTree = "<group>"; };
 		FFBD3CEE1B7BAAC400BE288C /* libMapbox.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMapbox.a; path = Velib/Mapbox/libMapbox.a; sourceTree = "<group>"; };
+		FFF0B49C1B836B4E00171549 /* FRVStationSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRVStationSearchViewController.h; sourceTree = "<group>"; };
+		FFF0B49D1B836B4E00171549 /* FRVStationSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRVStationSearchViewController.m; sourceTree = "<group>"; };
+		FFF0B49E1B836B4E00171549 /* FRVStationSearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FRVStationSearchViewController.xib; sourceTree = "<group>"; };
+		FFF0B4A11B836CB900171549 /* FRVStationSearchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FRVStationSearchCell.h; path = View/FRVStationSearchCell.h; sourceTree = "<group>"; };
+		FFF0B4A21B836CB900171549 /* FRVStationSearchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FRVStationSearchCell.m; path = View/FRVStationSearchCell.m; sourceTree = "<group>"; };
+		FFF0B4A31B836CB900171549 /* FRVStationSearchCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FRVStationSearchCell.xib; path = View/FRVStationSearchCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -238,7 +248,11 @@
 				FF81583C1B80F48900926C44 /* FRVPredictionCell.h */,
 				FF81583D1B80F48900926C44 /* FRVPredictionCell.m */,
 				FF81583E1B80F48900926C44 /* FRVPredictionCell.xib */,
+				FFF0B4A11B836CB900171549 /* FRVStationSearchCell.h */,
+				FFF0B4A21B836CB900171549 /* FRVStationSearchCell.m */,
+				FFF0B4A31B836CB900171549 /* FRVStationSearchCell.xib */,
 				FF8158301B7FEF4700926C44 /* FRVStationViewController.xib */,
+				FFF0B49E1B836B4E00171549 /* FRVStationSearchViewController.xib */,
 				FF8158451B80FC1900926C44 /* bicycle.png */,
 				FF8158471B8101EC00926C44 /* bicycle@2x.png */,
 			);
@@ -252,6 +266,8 @@
 				FF0B4D8C1B7766CF00437F55 /* FRVContractsViewController.m */,
 				FFBD3CEB1B7BA93300BE288C /* FRVContractViewController.h */,
 				FFBD3CEC1B7BA93300BE288C /* FRVContractViewController.m */,
+				FFF0B49C1B836B4E00171549 /* FRVStationSearchViewController.h */,
+				FFF0B49D1B836B4E00171549 /* FRVStationSearchViewController.m */,
 				FF81582E1B7FEF4700926C44 /* FRVStationViewController.h */,
 				FF81582F1B7FEF4700926C44 /* FRVStationViewController.m */,
 			);
@@ -354,10 +370,12 @@
 				FF0B4D731B77663D00437F55 /* Images.xcassets in Resources */,
 				FF8256221B7F48D2000FA836 /* applidium.gpx in Resources */,
 				FFBD3CE11B7BA6EA00BE288C /* Mapbox in Resources */,
+				FFF0B4A51B836CB900171549 /* FRVStationSearchCell.xib in Resources */,
 				FF8158401B80F48900926C44 /* FRVPredictionCell.xib in Resources */,
 				FF8158481B8101EC00926C44 /* bicycle@2x.png in Resources */,
 				FF100F791B776FB90069B4C1 /* FRVContractCell.xib in Resources */,
 				FF0B4D8F1B7767F400437F55 /* Default-568h@2x.png in Resources */,
+				FFF0B4A01B836B4E00171549 /* FRVStationSearchViewController.xib in Resources */,
 				FF8158461B80FC1900926C44 /* bicycle.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -384,12 +402,14 @@
 				FF100F781B776FB90069B4C1 /* FRVContractCell.m in Sources */,
 				FF100F7F1B777F720069B4C1 /* FRVLastUpdate.m in Sources */,
 				FF100F741B776B3C0069B4C1 /* FRVContract.m in Sources */,
+				FFF0B49F1B836B4E00171549 /* FRVStationSearchViewController.m in Sources */,
 				FF0B4D8D1B7766CF00437F55 /* FRVContractsViewController.m in Sources */,
 				FFBA596C1B7CB99A00BC3E16 /* FRVStation.m in Sources */,
 				FFBA596F1B7CBAA000BC3E16 /* FRVStationStore.m in Sources */,
 				FFBD3CED1B7BA93300BE288C /* FRVContractViewController.m in Sources */,
 				FF0B4D6B1B77663D00437F55 /* AppDelegate.m in Sources */,
 				FF81583F1B80F48900926C44 /* FRVPredictionCell.m in Sources */,
+				FFF0B4A41B836CB900171549 /* FRVStationSearchCell.m in Sources */,
 				FF95C0121B7B8FA400678145 /* FRVFetcher.m in Sources */,
 				FF0B4D681B77663D00437F55 /* main.m in Sources */,
 			);

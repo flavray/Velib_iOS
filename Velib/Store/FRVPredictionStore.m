@@ -75,9 +75,10 @@
 {
     NSMutableArray* predictions = [NSMutableArray arrayWithArray:[self ofStation:station]];
 
-    while (([predictions count] > 0) && ([[[predictions objectAtIndex:0] datetime] compare:date] == NSOrderedAscending)) {
-        [predictions removeObjectAtIndex:0];
-    }
+    // TODO: UNCOMMENT WHEN PREDICTIONS WORK
+    // while (([predictions count] > 0) && ([[[predictions objectAtIndex:0] datetime] compare:date] == NSOrderedAscending)) {
+    //    [predictions removeObjectAtIndex:0];
+    // }
 
     return [NSArray arrayWithArray:predictions];
 }

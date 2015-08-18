@@ -59,7 +59,12 @@
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    FRVContractCell* cell = [tableView dequeueReusableCellWithIdentifier:@"FRVContractCell"];
+    static NSString* tableIdentifier = @"FRVContractCell";
+    FRVContractCell* cell = [tableView dequeueReusableCellWithIdentifier:tableIdentifier];
+
+    if (!cell) {
+        cell = [[FRVContractCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:tableIdentifier];
+    }
 
     FRVContract* contract = [[self contracts] objectAtIndex:indexPath.row];
 

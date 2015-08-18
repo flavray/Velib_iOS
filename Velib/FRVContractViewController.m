@@ -11,6 +11,7 @@
 #import "FRVStation.h"
 #import "FRVStationStore.h"
 #import "FRVStationViewController.h"
+#import "FRVStationSearchViewController.h"
 
 #import <CoreLocation/CoreLocation.h>
 
@@ -203,7 +204,8 @@
 
 - (void)search:(id)sender
 {
-    NSLog(@"SEARCH");
+    FRVStationSearchViewController* ssvc = [[FRVStationSearchViewController alloc] initWithStations:self.stations];
+    [self.navigationController pushViewController:ssvc animated:YES];
 }
 
 @end
