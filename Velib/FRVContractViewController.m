@@ -38,6 +38,10 @@
     if (self) {
         [self.navigationItem setTitle:contract.name];
 
+        [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch
+                                                                                                target:self
+                                                                                                action:@selector(search:)]];
+
         _contract = contract;
         _stations = [[FRVStationStore sharedStore] ofContract:self.contract];
 
@@ -193,6 +197,13 @@
     self.mapView.zoom = 14.0f;
     self.mapView.clusteringEnabled = NO;
     self.locationFound = YES;
+}
+
+#pragma mark - Search
+
+- (void)search:(id)sender
+{
+    NSLog(@"SEARCH");
 }
 
 @end
