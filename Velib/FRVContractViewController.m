@@ -26,6 +26,8 @@
 
 @property BOOL locationFound;
 
+@property (strong, nonatomic) NSDate* start;
+
 @end
 
 @implementation FRVContractViewController
@@ -77,7 +79,7 @@
 
     self.mapView.delegate = self;
 
-    self.mapView.zoom = 13.0f;
+    self.mapView.zoom = 15.0f;
 
     CLLocationCoordinate2D center = CLLocationCoordinate2DMake(self.contract.latitude, self.contract.longitude);
     self.mapView.centerCoordinate = center;
@@ -91,7 +93,9 @@
     
     self.mapView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
 
-    NSDate* start = [NSDate date];
+    self.start = [NSDate date];
+
+    self.mapView.clusteringEnabled = NO;
 
     for (FRVStation* station in self.stations) {
         CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(station.latitude, station.longitude);
@@ -103,9 +107,14 @@
         annotation.userInfo = station;  // Store the station to retrieve it later in other methods
     }
 
-    NSLog(@"%lf", -[start timeIntervalSinceNow]);
-    
-    self.mapView.clusteringEnabled = YES;
+    NSLog(@"load %lf", -[self.start timeIntervalSinceNow]);
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+
+    NSLog(@"appear %lf", -[self.start timeIntervalSinceNow]);;
 }
 
 - (void)mapView:(RMMapView *)mapView didSelectAnnotation:(RMAnnotation *)annotation

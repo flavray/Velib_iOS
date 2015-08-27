@@ -12,7 +12,7 @@
 
 + (NSString*)baseURL
 {
-    return @"http://localhost:3042";
+    return @"http://10.0.1.17:8084";
 }
 
 + (NSString*)buildURL:(NSString*)url
