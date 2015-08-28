@@ -110,7 +110,7 @@
 
     FRVStationViewController* svc = [[FRVStationViewController alloc] initWithStation:station];
 
-    self.searchController.active = NO;
+//    self.searchController.active = NO;
     [self presentViewController:svc animated:YES completion:nil];
 }
 

@@ -14,6 +14,7 @@
 
 @interface FRVStationViewController ()
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *titleBarButtonItem;
 @property (weak, nonatomic) IBOutlet UILabel* nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel* addressLabel;
 @property (weak, nonatomic) IBOutlet UILabel* bikeStandsLabel;
@@ -59,6 +60,7 @@
 {
     [super viewWillAppear:animated];
 
+    self.titleBarButtonItem.title = self.station.name;
     self.nameLabel.text = self.station.name;
     self.addressLabel.text = self.station.address;
     self.bikeStandsLabel.text = [NSString stringWithFormat:@"%d bike stands", self.station.bikeStands];
