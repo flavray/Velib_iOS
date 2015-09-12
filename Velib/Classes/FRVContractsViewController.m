@@ -69,7 +69,7 @@
     FRVContract* contract = [[self contracts] objectAtIndex:indexPath.row];
 
     cell.nameLabel.text = contract.name;
-    cell.stationsCountLabel.text = [NSString stringWithFormat:@"%d stations",contract.stationsCount];
+    cell.stationsCountLabel.text = [NSString stringWithFormat:@"%d stations",contract.stations_count];
 
     return cell;
 }

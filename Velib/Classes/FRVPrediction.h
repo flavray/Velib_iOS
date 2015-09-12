@@ -13,7 +13,7 @@
 @interface FRVPrediction : NSObject
 
 @property (strong, nonatomic) NSDate* datetime;
-@property NSInteger availableBikeStands;
+@property NSInteger available_bike_stands;
 
 @property (strong, nonatomic) FRVStation* station;
 

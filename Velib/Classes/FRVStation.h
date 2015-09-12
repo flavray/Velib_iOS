@@ -13,10 +13,10 @@
 @property int id;
 @property NSString* name;
 @property NSString* address;
-@property int bikeStands;
+@property int bike_stands;
 @property double latitude;
 @property double longitude;
-@property int contractId;
+@property int contract_id;
 
 @end
 

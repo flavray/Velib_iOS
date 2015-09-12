@@ -108,7 +108,7 @@
     RLMRealm* realm = [RLMRealm defaultRealm];
 
     [realm transactionWithBlock:^{
-        RLMResults* allStations = [FRVStation objectsWhere:@"contractId = %d", [contractId intValue]];
+        RLMResults* allStations = [FRVStation objectsWhere:@"contract_id = %d", [contractId intValue]];
         [realm deleteObjects:allStations];
         
         for (NSDictionary* station in stations) {
@@ -122,7 +122,7 @@
 
 - (RLMResults*)stationsForContract:(FRVContract*)contract
 {
-    return [FRVStation objectsWhere:@"contractId = %d", contract.id];
+    return [FRVStation objectsWhere:@"contract_id = %d", contract.id];
 }
 
 @end

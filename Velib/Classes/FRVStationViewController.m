@@ -63,7 +63,7 @@
     self.titleBarButtonItem.title = self.station.name;
     self.nameLabel.text = self.station.name;
     self.addressLabel.text = self.station.address;
-    self.bikeStandsLabel.text = [NSString stringWithFormat:@"%d bike stands", self.station.bikeStands];
+    self.bikeStandsLabel.text = [NSString stringWithFormat:@"%d bike stands", self.station.bike_stands];
 }
 
 #pragma mark - Table view methods
@@ -95,7 +95,7 @@
     }
 
     cell.timeLabel.text = [formatter stringFromDate:prediction.datetime];
-    cell.numberLabel.text = [NSString stringWithFormat:@"%ld", (unsigned long)[prediction availableBikes]];  // [NSString stringWithFormat:@"%ld/%d", (long)prediction.availableBikeStands, prediction.station.bikeStands];
+    cell.numberLabel.text = [NSString stringWithFormat:@"%ld", (unsigned long)[prediction availableBikes]];
 
     return cell;
 }

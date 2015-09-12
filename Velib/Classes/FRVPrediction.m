@@ -19,7 +19,7 @@
         NSTimeInterval timestamp = [[value objectForKey:@"timestamp"] doubleValue];
 
         _datetime = [NSDate dateWithTimeIntervalSince1970:timestamp];
-        _availableBikeStands = [[value objectForKey:@"availableBikeStands"] integerValue];
+        _available_bike_stands = [[value objectForKey:@"availableBikeStands"] integerValue];
 
         _station = station;
     }
@@ -29,7 +29,7 @@
 
 - (NSInteger)availableBikes
 {
-    return self.station.bikeStands - self.availableBikeStands;
+    return self.station.bike_stands - self.available_bike_stands;
 }
 
 @end

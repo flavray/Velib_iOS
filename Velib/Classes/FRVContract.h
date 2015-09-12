@@ -15,7 +15,7 @@
 @property NSString* name;
 @property double latitude;
 @property double longitude;
-@property int stationsCount;
+@property int stations_count;
 
 @end
 
