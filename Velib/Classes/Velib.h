@@ -10,6 +10,6 @@
 #define Velib_Velib_h
 
 // URL of a running instance of https://github.com/applidium/bike-share-prediction
-#define FRVWebserviceURL @"http://10.0.1.17:3042"
+#define FRVWebserviceURL @"http://bike-share-prediction-example.herokuapp.com"
 
 #endif
