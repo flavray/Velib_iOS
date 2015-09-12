@@ -167,11 +167,11 @@
 		FF0B4D641B77663D00437F55 /* Velib */ = {
 			isa = PBXGroup;
 			children = (
-				FFA0395B1BA172400018142E /* Resources */,
 				FFA0391F1BA08C850018142E /* Classes */,
 				FFBD3CEA1B7BA8F300BE288C /* External */,
-				FF0B4D721B77663D00437F55 /* Images.xcassets */,
+				FFA0395B1BA172400018142E /* Resources */,
 				FF0B4D651B77663D00437F55 /* Supporting Files */,
+				FF0B4D721B77663D00437F55 /* Images.xcassets */,
 			);
 			path = Velib;
 			sourceTree = "<group>";
