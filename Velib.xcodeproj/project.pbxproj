@@ -66,6 +66,7 @@
 		FF0B4D801B77663D00437F55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF0B4D811B77663D00437F55 /* VelibTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VelibTests.m; sourceTree = "<group>"; };
 		FF0B4D921B7769D300437F55 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		FF9637461BA4604C001ED14D /* Velib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Velib.h; path = Classes/Velib.h; sourceTree = "<group>"; };
 		FFA039211BA08E470018142E /* FRVContract.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FRVContract.h; path = Classes/FRVContract.h; sourceTree = "<group>"; };
 		FFA039221BA08E470018142E /* FRVContract.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FRVContract.m; path = Classes/FRVContract.m; sourceTree = "<group>"; };
 		FFA039231BA08E470018142E /* FRVLastUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FRVLastUpdate.h; path = Classes/FRVLastUpdate.h; sourceTree = "<group>"; };
@@ -209,6 +210,7 @@
 				FFA039521BA171D00018142E /* AppDelegate.m */,
 				FFA039541BA171F30018142E /* FRVFetcher.h */,
 				FFA039551BA171F30018142E /* FRVFetcher.m */,
+				FF9637461BA4604C001ED14D /* Velib.h */,
 				FFA039441BA08EBF0018142E /* Store */,
 				FFA0393A1BA08E8A0018142E /* View */,
 				FFA0392D1BA08E580018142E /* Controller */,

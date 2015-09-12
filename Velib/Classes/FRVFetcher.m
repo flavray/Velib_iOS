@@ -7,17 +7,13 @@
 //
 
 #import "FRVFetcher.h"
+#import "Velib.h"
 
 @implementation FRVFetcher
 
-+ (NSString*)baseURL
-{
-    return @"http://10.0.1.17:3042";
-}
-
 + (NSString*)buildURL:(NSString*)url
 {
-    NSString* base = [self baseURL];
+    NSString* base = FRVWebserviceURL;
     
     return [NSString stringWithFormat:@"%@%@%@", base, url, @".json"];
 }
